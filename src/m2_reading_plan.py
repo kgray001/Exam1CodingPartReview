@@ -26,7 +26,7 @@ def date_from_now(num_of_days):
     return end_date.strftime('%B %d, %Y')
 
 ###############################################################################
-# TODO: 1.
+# DONE: 1.
 #
 #   Write a function called book_info() that takes four keyword arguments:
 #     - title
@@ -42,9 +42,11 @@ def date_from_now(num_of_days):
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def book_info(title, author, genre, num_of_pages):
+    print(f'Title: {title}\nAuthor: {author}\nGenre: {genre}\nNumber of Pages: {num_of_pages}')
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #
 #   Write a function called reading_plan() that takes two parameters
 #     - num_of_pages
@@ -62,6 +64,10 @@ def date_from_now(num_of_days):
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def reading_plan(num_of_pages, num_of_days):
+    d = date_from_now(num_of_days)
+    pnum = num_of_pages / num_of_days
+    return print(f'To read {num_of_pages} pages in {num_of_days} days, you will need to read {pnum} pages per day. You will finish these pages on {d}. Have fun!')
 
 ###############################################################################
 # TODO: 3.
@@ -85,3 +91,12 @@ def date_from_now(num_of_days):
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def main():
+    title = "The Hobbit"
+    author = "J.R.R. Tolkien"
+    genre = "Fantasy"
+    num_of_pages = "300"
+    num_of_days = "30"
+    # book_info(title ="title", author = "author", genre = "genre", num_of_pages = "num_of_pages")
+    print(reading_plan(num_of_pages = num_of_pages, num_of_days = num_of_days))
+main()
