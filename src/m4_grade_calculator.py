@@ -1,5 +1,5 @@
 ###############################################################################
-# TODO: 1.
+# DONE: 1.
 #
 #   In this module, we are going to create a script that helps you calculate
 #   your score in this course.
@@ -23,9 +23,11 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def gather_score(category_name):
+    return float(input(f"What is your current grade in {category_name} category?"))
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #
 #   Now we need a function that will calculate the user's grade in the course.
 #
@@ -60,6 +62,8 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def calculate_final_grade(participation, exam1, exam2, exam3, final_project):
+    return (participation * 0.2) + (exam1 * 0.1) + (exam2 * 0.15) + (exam3 * 0.2) + (final_project * 0.3)
 
 ###############################################################################
 # TODO: 3.
@@ -84,3 +88,14 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def main():
+    print("Let's calculate your grade in CSC-141!")
+    participation = float(input("What is your grade in the Participation category"))
+    exam1 = float(input("What is your grade in the exam1 category"))
+    exam2 = float(input("What is your grade in the exam2 category"))
+    exam3 = float(input("What is your grade in the exam3 category"))
+    final_project1 = float(input("What is your grade in the Final Project category"))
+    calculate_final_grade(final_project = final_project1)
+
+
+main()

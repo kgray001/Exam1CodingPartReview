@@ -1,5 +1,5 @@
 ###############################################################################
-# TODO: 1.
+# DONE: 1.
 #
 #   In this module, we are going to create a simple budget calculator.
 #
@@ -25,9 +25,12 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def calculate_net_income(gross_pay, tax_percentage):
+    net_income = gross_pay - (gross_pay * tax_percentage)
+    return net_income
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #
 #   Now, let's write a function that will help us deduct certain categories out
 #   of our budget.
@@ -44,9 +47,12 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def expense(total, amount_budgeted):
+     leftover = total - amount_budgeted 
+     return leftover 
 
 ###############################################################################
-# TODO: 3.
+# DONE: 3.
 #
 #   Write a simple function that prints how much the user has left to budget.
 #   This funciton should be called current_amount() and it takes one parameter:
@@ -59,6 +65,8 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def current_amount(amount):
+     return print(f"You have ${amount} left in your budget.")
 
 ###############################################################################
 # TODO: 4.
@@ -90,3 +98,15 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def main():
+     print("Let's do some budgeting!")
+     income = float(input("What is your monthly income?"))
+     budget_amount = calculate_net_income(income,.50)
+     current_amount(budget_amount)
+     groceries = float(input("How much do you spend on groceries every month?"))
+     after_groceries = expense(budget_amount, groceries)
+     current_amount(after_groceries)
+     gas = float(input("How much money do you spend on gas per month?"))
+     after_gas = expense(after_groceries, gas)
+     print(f"Congratulations! You have ${after_gas} left in your budget!")
+main()
