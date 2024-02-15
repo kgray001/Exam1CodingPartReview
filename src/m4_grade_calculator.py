@@ -63,10 +63,10 @@ def gather_score(category_name):
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
 def calculate_final_grade(participation, exam1, exam2, exam3, final_project):
-    return (participation * 0.2) + (exam1 * 0.1) + (exam2 * 0.15) + (exam3 * 0.2) + (final_project * 0.3)
+    return (participation * 0.2) + (exam1 * 0.1) + (exam2 * 0.15) + (exam3 * 0.2) + (final_project * 0.35)
 
 ###############################################################################
-# TODO: 3.
+# TODO: 3.1
 #
 #   Now, let's put it all together.
 #
@@ -90,12 +90,13 @@ def calculate_final_grade(participation, exam1, exam2, exam3, final_project):
 ###############################################################################
 def main():
     print("Let's calculate your grade in CSC-141!")
-    participation = float(input("What is your grade in the Participation category"))
-    exam1 = float(input("What is your grade in the exam1 category"))
-    exam2 = float(input("What is your grade in the exam2 category"))
-    exam3 = float(input("What is your grade in the exam3 category"))
+    participation1 = float(input("What is your grade in the Participation category"))
+    e1 = float(input("What is your grade in the exam1 category"))
+    e2 = float(input("What is your grade in the exam2 category"))
+    e3 = float(input("What is your grade in the exam3 category"))
     final_project1 = float(input("What is your grade in the Final Project category"))
-    calculate_final_grade(final_project = final_project1)
-
+    final_grade = calculate_final_grade(final_project = final_project1, exam1 = e1, exam2 = e2, exam3 = e3, participation = participation1)
+    percent_grade = final_grade * 100
+    print(f"You currently have a {percent_grade}% in CSC-141")
 
 main()

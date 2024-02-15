@@ -100,3 +100,9 @@ def main():
     book_info(title=title1, author=author1, genre=genre1, num_of_pages=num_of_pages1)
     print(reading_plan(num_of_pages1, num_of_days))
 main()
+    
+# def book_author(**info):
+#     print(info["author"])
+
+# book_author(title="The Swiss Family Robinson", author="Johann David Wyss",
+# num_of_pages=533)
